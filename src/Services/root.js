@@ -1,21 +1,23 @@
-import axios from "axios";
+import { instance } from "./Instance";
 
-const BASE_URL = "https://api.themoviedb.org/3";
+export function getTrendingMovies() {
+  return instance.get("/trending/movie/day").then((res) => res.data);
+}
 
-const TIMEOUT = 1000 * 30;
+export function getSearchMovie({ query }) {
+  return instance
+    .get("/search/movie", { params: { query } })
+    .then((res) => res.data);
+}
 
-export const instance = axios.create({
-  baseURL: BASE_URL,
-  timeout: TIMEOUT,
-  headers: {
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiI4ZGRjMDJmZjMzZTY2ZjdlZjhkYWVmY2JkMjlmNjViNiIsInN1YiI6IjY2MGZjZmIxNzRkNmMwMDE2M2Q4ZjZjZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.bds0ssRkYHukEx4M_xEBDexeBbPfcVNLuo6UuNOF5t8",
-  },
-});
+export function getMovieDetails(movie_id) {
+  return instance.get(`/movie/${movie_id}`).then((res) => res.data);
+}
 
-// Встановлення обробника помилок для всіх запитів через інстанс Axios
-instance.interceptors.response.use((response) => {
-  // Обробка успішної відповіді
-  return response;
-});
-//виклик додаткової обробки
+export function getMovieCredits(movie_id) {
+  return instance.get(`/movie/${movie_id}/credits`).then((res) => res.data);
+}
+
+export function getMovieReviews(movie_id) {
+  return instance.get(`/movie/${movie_id}/reviews`).then((res) => res.data);
+}
