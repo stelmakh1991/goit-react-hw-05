@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { getTrendingMovies } from "../../Services/api";
-import MovieList from "../../kompone/MovieList/MovieList";
+import MovieList from "../../components/MovieList/MovieList";
 
 const HomePage = () => {
   const [data, setData] = useState([]);
