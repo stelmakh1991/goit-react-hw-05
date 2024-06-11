@@ -1,10 +1,10 @@
 import { Suspense, useEffect, useRef, useState } from "react";
-import MovieCard from "../../Components/MovieCard/MovieCard";
-import { getMovieDetails } from "../../Services/Api";
+import MovieCard from "../../components/MovieCard/MovieCard";
+import { getMovieDetails } from "../../Services/api";
 import { Outlet, useLocation, useParams } from "react-router-dom";
-import ErrorMessage from "../../Components/ErrorMessage/ErrorMessage";
-import Loader from "../../Components/Loader/Loader";
-import { NotFound } from "../../Components/NotFound/NotFound";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import Loader from "../../components/Loader/Loader";
+import { NotFound } from "../../components/NotFound/NotFound";
 import * as S from "./MovieDetailsPage.style";
 
 const MovieDetailsPage = () => {

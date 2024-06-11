@@ -3,7 +3,7 @@ import MovieCastItem from "../MovieCastItem/MovieCastItem";
 import ErrorMessage from "../ErrorMessage/ErrorMessage";
 import * as S from "./MovieCast.style";
 import { useParams } from "react-router-dom";
-import { getMovieCredits } from "../../Services/Api";
+import { getMovieCredits } from "../../Services/api";
 import Loader from "../Loader/Loader";
 
 const MovieCast = () => {

@@ -1,22 +1,22 @@
 import { Suspense } from "react";
 import { lazy } from "react";
 import { Route, Routes } from "react-router-dom";
-import Navigation from "./Components/Navigation/Navigation";
+import Navigation from "./components/Navigation/Navigation";
 import { GlobalCSS } from "./styles/global";
 
-const Home = lazy(() => import("./Pages/HomePage/HomePage"));
+const Home = lazy(() => import("./pages/HomePage/HomePage"));
 
 const MovieDetails = lazy(() =>
-  import("./Pages/MovieDetailsPage/MovieDetailsPage")
+  import("./pages/MovieDetailsPage/MovieDetailsPage")
 );
-const MoviesPage = lazy(() => import("./Pages/MoviesPage/MoviesPage"));
+const MoviesPage = lazy(() => import("./pages/MoviesPage/MoviesPage"));
 
-const NotFound = lazy(() => import("./Pages/NotFoundPage/NotFoundPage"));
+const NotFound = lazy(() => import("./pages/NotFoundPage/NotFoundPage"));
 
-const MovieCast = lazy(() => import("./Components/MovieCast/MovieCast"));
+const MovieCast = lazy(() => import("./components/MovieCast/MovieCast"));
 
 const MovieReviews = lazy(() =>
-  import("./Components/MovieReviews/MovieReviews")
+  import("./components/MovieReviews/MovieReviews")
 );
 
 function App() {

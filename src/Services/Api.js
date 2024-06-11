@@ -1,4 +1,4 @@
-import { instance } from "./Instance";
+import { instance } from "./instance";
 
 export function getTrendingMovies() {
   return instance.get("/trending/movie/day").then((res) => res.data);
